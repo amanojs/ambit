@@ -20,6 +20,9 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
+    ],
+    "plugins": [
+      "styled-jsx/babel"
     ]
   },
   "devDependencies": {
@@ -37,7 +40,9 @@
   "dependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/styled-jsx": "^2.2.8",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "styled-jsx": "^3.2.4"
   }
 }
