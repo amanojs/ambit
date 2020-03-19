@@ -10,11 +10,11 @@ export type AppState = {
   // todo: TodoState のように複数宣言できます。
 }
 
-export const AppActions = {
+export const AppAction = {
   test: Test.Actions
 }
 
-export const AppReducers = {
+export const AppReducer = {
   test: Test.Reducer
 }
 
@@ -23,7 +23,7 @@ const storeEnhancers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
-  combineReducers<AppState>(AppReducers),
+  combineReducers<AppState>(AppReducer),
   storeEnhancers(applyMiddleware(thunk))
 )
 
