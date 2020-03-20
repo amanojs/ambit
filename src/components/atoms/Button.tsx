@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface Props {
-  click_event: Function
+  click_event(): void
   name?: string
   bgcolor?: string
   color?: string
@@ -13,7 +13,8 @@ export const Button: React.FC<Props> = props => {
       <input
         type="button"
         className="button"
-        onClick={() => props.click_event}
+        //()がないと動きません。
+        onClick={() => props.click_event()}
         value={props.name}
       />
 

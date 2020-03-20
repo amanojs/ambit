@@ -8,14 +8,18 @@ interface OwnProps {}
 type Props = OwnProps & PostHandler
 
 export const PostForm: React.FC<Props> = props => {
+  //親側でRefを作る
+  const inputRef = React.useRef({} as HTMLInputElement)
   const testFunction = () => {
-    console.log('これpython?')
+    console.log('inputの値は' + inputRef.current.value)
+    inputRef.current.value = ''
   }
   return (
     <React.Fragment>
       <form action="">
-        <InputText />
-        <Button click_event={props.addPost} />
+        <InputText ref={inputRef} />
+        {/* <Button click_event={props.addPost} /> */}
+        <Button click_event={testFunction} />
       </form>
     </React.Fragment>
   )
