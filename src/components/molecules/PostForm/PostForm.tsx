@@ -16,7 +16,7 @@ export const PostForm: React.FC<Props> = props => {
   }
   return (
     <React.Fragment>
-      <form action="">
+      <form action="" className="PostForm">
         <InputText ref={inputRef} />
         {/* <Button click_event={props.addPost} /> */}
         <Button click_event={testFunction} />
