@@ -15,7 +15,9 @@ export class App extends React.Component<AppProps, {}> {
           Hello {this.props.compiler} and {this.props.framework}!
         </h1>
         <PopUp>
-          <PostForm />
+          <div>
+            <PostForm />
+          </div>
         </PopUp>
       </React.Fragment>
     )
