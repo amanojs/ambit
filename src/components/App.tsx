@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { Button } from './atoms/Button'
-
+import { PopUp } from './organisms/PopUp'
 import PostForm from './molecules/PostForm'
 
 export interface AppProps {
@@ -11,13 +10,14 @@ export interface AppProps {
 export class App extends React.Component<AppProps, {}> {
   render() {
     return (
-      <h1>
-        Hello {this.props.compiler} and {this.props.framework}!
-        <Button click_event={() => {}} name="確認" />
-        <div>
+      <React.Fragment>
+        <h1>
+          Hello {this.props.compiler} and {this.props.framework}!
+        </h1>
+        <PopUp>
           <PostForm />
-        </div>
-      </h1>
+        </PopUp>
+      </React.Fragment>
     )
   }
 }
