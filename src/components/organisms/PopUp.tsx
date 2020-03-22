@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Carvon } from '../atoms/Carvon'
+import { Carvon } from '../molecules/Carvon'
 
 interface Props {
   children: any
