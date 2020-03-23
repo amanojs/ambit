@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Carvon } from '../molecules/Carvon'
 
 interface Props {
-  children: any
+  children: React.ReactNode
   click_event?(): void
 }
 
