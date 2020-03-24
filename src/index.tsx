@@ -6,7 +6,7 @@ import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App compiler="TypeScript" framework="React" />
+    <App />
     <style jsx>{`
       * {
         margin: 0;
