@@ -1,13 +1,11 @@
 import * as React from 'react'
 
-interface Props {
-  click_event?(): void
-}
+interface Props {}
 
 export const Carvon: React.FC<Props> = props => {
   return (
     <React.Fragment>
-      <div className="Carvon" onClick={() => props.click_event()}></div>
+      <div className="Carvon"></div>
       <style jsx>{`
         .Carvon {
           position: fixed;
