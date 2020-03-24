@@ -20,6 +20,7 @@ export const Button: React.FC<Props> = props => {
 
       <style jsx scoped>{`
         .button {
+          cursor: pointer;
           width: 100px;
           height: 30px;
           background-color: ${props.bgcolor};
