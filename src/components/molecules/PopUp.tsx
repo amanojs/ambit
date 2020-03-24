@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Carvon } from '../atoms/Carvon'
+import { Transition } from 'react-transition-group'
 
 interface Props {
   children: React.ReactNode
@@ -8,7 +9,6 @@ interface Props {
 }
 
 export const PopUp: React.FC<Props> = props => {
-  const display_flg = props.open_flg ? 'box' : 'none'
   return (
     <React.Fragment>
       <div className="PopUpSum">
@@ -17,21 +17,28 @@ export const PopUp: React.FC<Props> = props => {
         </div>
         <Carvon />
       </div>
-      <style jsx>{`
-        .PopUpSum {
-          display: ${display_flg};
-        }
-        .PopUp {
-          display: flex;
-          justify-content: center;
-          position: fixed;
-          top: 0;
-          width: 100vw;
-          height: 100vh;
-          padding-top: 30px;
-          z-index: 5;
-        }
-      `}</style>
+
+      <Transition in={props.open_flg} timeout={200}>
+        {state => (
+          <style jsx>{`
+            .PopUpSum {
+              transition: 0.2s;
+              opacity: ${state === 'entered' ? 1 : 0};
+              display: ${state === 'exited' ? 'none' : 'block'};
+            }
+            .PopUp {
+              display: flex;
+              justify-content: center;
+              position: fixed;
+              top: 0;
+              width: 100vw;
+              height: 100vh;
+              padding-top: 30px;
+              z-index: 5;
+            }
+          `}</style>
+        )}
+      </Transition>
     </React.Fragment>
   )
 }
