@@ -3,7 +3,9 @@ import { Button } from '../../atoms/Button'
 import { InputText } from '../../atoms/InputText'
 import { PostHandler } from '.'
 
-interface OwnProps {}
+interface OwnProps {
+  width?: string
+}
 
 type Props = OwnProps & PostHandler
 
@@ -17,10 +19,18 @@ export const PostForm: React.FC<Props> = props => {
   return (
     <React.Fragment>
       <form action="" className="PostForm">
-        <InputText ref={inputRef} />
+        <InputText ref={inputRef} width="100%" />
         {/* <Button click_event={props.addPost} /> */}
         <Button click_event={testFunction} />
       </form>
+      <style jsx>{`
+        .PostForm {
+        }
+      `}</style>
     </React.Fragment>
   )
+}
+
+PostForm.defaultProps = {
+  width: '700px'
 }
