@@ -21,7 +21,7 @@ export const Post: React.FC<Props> = props => {
           <Text body={props.item.created_at.toString() + 'に投稿'}></Text>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx={true}>{`
         .post {
           padding: 10px 20px;
         }
