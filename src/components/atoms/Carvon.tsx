@@ -8,7 +8,7 @@ export const Carvon: React.FC<Props> = props => {
   return (
     <React.Fragment>
       <div className="Carvon" onClick={() => props.clickEvent()}></div>
-      <style jsx>{`
+      <style jsx={true}>{`
         .Carvon {
           position: fixed;
           top: 0;

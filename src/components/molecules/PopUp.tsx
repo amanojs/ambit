@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Carvon } from '../atoms/Carvon'
 import { TransitionStatus } from 'react-transition-group/Transition'
 import { Transition } from 'react-transition-group'
-import { IconButton } from '../atoms/IconButto'
+import { IconButton } from '../atoms/IconButton'
 
 interface Props {
   width?: string
@@ -32,7 +32,7 @@ export const PopUp: React.FC<Props> = props => {
 
       <Transition in={props.open_flg} timeout={200}>
         {(state: TransitionStatus) => (
-          <style jsx>{`
+          <style jsx={true}>{`
             .PopUp {
               transition: 0.2s;
               opacity: ${state === 'entered' ? 1 : 0};
@@ -50,7 +50,6 @@ export const PopUp: React.FC<Props> = props => {
               height: ${props.height};
               padding: 10px;
               border-radius: 4px;
-              overflow: hidden;
               background-color: #fff;
               z-index: 6;
             }
@@ -69,5 +68,5 @@ export const PopUp: React.FC<Props> = props => {
 
 PopUp.defaultProps = {
   width: '500px',
-  height: '300px'
+  height: 'auto'
 }

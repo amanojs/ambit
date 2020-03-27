@@ -48,7 +48,7 @@ export const StoreSample: React.FC<Props> = props => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx={true}>{`
         .storeSample {
           padding: 20px;
           background-color: white;

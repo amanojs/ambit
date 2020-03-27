@@ -7,7 +7,7 @@ import store from './store'
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <style jsx>{`
+    <style jsx={true}>{`
       * {
         margin: 0;
         padding: 0;

@@ -15,7 +15,7 @@ export const InputText = React.forwardRef(
     return (
       <React.Fragment>
         <input ref={ref} type="text" className="input_text" />
-        <style jsx>{`
+        <style jsx={true}>{`
           .input_text {
             width: ${props.width};
             height: ${props.height};
@@ -33,7 +33,7 @@ export const InputText = React.forwardRef(
 //   return (
 //     <React.Fragment>
 //       <input type="text" value="" className="input_text" />
-//       <style jsx>{`
+//       <style jsx={true}>{`
 //         .input_text {
 //           width: ${props.width};
 //           height: ${props.height};

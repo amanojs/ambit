@@ -13,10 +13,10 @@ export const PostList: React.FC<Props> = props => {
     <React.Fragment>
       <div className="postList">
         {props.itemList.map((item: ReceivedPost) => (
-          <Post item={item} />
+          <Post item={item} key={item.post_id} />
         ))}
       </div>
-      <style jsx>{`
+      <style jsx={true}>{`
         .postList {
           border-right: 1px solid #ddd;
           border-left: 1px solid #ddd;
