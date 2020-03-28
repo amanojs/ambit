@@ -3,9 +3,11 @@ import { Button } from '../../atoms/Button'
 import { PostHandler } from '.'
 import { TextArea } from '../../atoms/TextArea'
 import { IconButton } from '../../atoms/IconButton'
+import { Post } from '../../../models/post'
 
 interface OwnProps {
   width?: string
+  doneEvent?(): void
 }
 
 type Props = OwnProps & PostHandler
@@ -16,6 +18,18 @@ export const PostForm: React.FC<Props> = props => {
     console.log('inputの値は' + TextAreaRef.current.value)
     TextAreaRef.current.value = ''
   }
+  const addPostHandler = () => {
+    const post: Post = {
+      account_id: '33333333',
+      post_body: TextAreaRef.current.value,
+      post_type: 1,
+      genres: ['IT'],
+      images: []
+    }
+    props.addPost(post)
+    TextAreaRef.current.value = ''
+    if (props.doneEvent) props.doneEvent()
+  }
   return (
     <React.Fragment>
       <form action="" className="PostForm">
@@ -25,17 +39,10 @@ export const PostForm: React.FC<Props> = props => {
         <TextArea ref={TextAreaRef} min_height="100px" />
         {/* <Button click_event={props.addPost} /> */}
         <Button
-          click_event={testFunction}
+          click_event={addPostHandler}
           width="100%"
           height="50px"
           bgcolor="#9b59b6"
-          color="#fff"
-        />
-        <Button
-          click_event={testFunction}
-          width="100%"
-          height="20px"
-          bgcolor="#555"
           color="#fff"
         />
       </form>

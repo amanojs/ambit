@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { PostList } from '../organisms/PostList'
+import PostList from '../organisms/PostList/index'
 import { ReceivedPost, ReceivedPostMock } from '../../models/post'
 import { PostPop } from '../organisms/PostPop'
 import { Button } from '../atoms/Button'
-import { DebugPop } from '../organisms/DebugPop'
 
 export interface Props {
   compiler: string
@@ -20,16 +19,13 @@ const itemList: ReceivedPost[] = [
 export const Top: React.FC<Props> = props => {
   //PostPopのフラグ
   const [postpop_flg, setPostFlg] = React.useState(false)
-  const [debug_flg, setDebugFlg] = React.useState(false)
   return (
     <React.Fragment>
-      <h1>
+      <h1 className="oioi">
         Hello {props.compiler} and {props.framework}!
       </h1>
       <button onClick={() => setPostFlg(true)}>投稿する</button>
-      <PostList itemList={itemList} />
-      {/* カーボンの色が濃くなるからやっぱ同一コンポーネント内でのクラスが上書きされてでちゃってる */}
-      <DebugPop setFlg={setDebugFlg} open_flg={debug_flg} />
+      <PostList />
       <PostPop setFlg={setPostFlg} open_flg={postpop_flg} />
       <style jsx={true}>{`
         .postList {

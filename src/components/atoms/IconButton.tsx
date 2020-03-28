@@ -15,22 +15,25 @@ interface Props {
 export const IconButton: React.FC<Props> = props => {
   return (
     <React.Fragment>
-      <div className="IconButton" onClick={() => props.click_event()}>
+      <div
+        className="IconButton"
+        onClick={() => props.click_event()}
+        style={{
+          transition: '0.3s',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: props.width,
+          height: props.height,
+          color: props.color,
+          padding: '5px',
+          borderRadius: '100px',
+          cursor: 'pointer'
+        }}
+      >
         <Icon>{props.icon}</Icon>
       </div>
       <style jsx={true}>{`
-        .IconButton {
-          transition: 0.3s;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: ${props.width};
-          height: ${props.height};
-          color: ${props.color};
-          padding: 5px;
-          border-radius: 100px;
-          cursor: pointer;
-        }
         .IconButton:hover {
           background-color: ${props.bgcolor};
         }
