@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { Transition } from 'react-transition-group'
+import { TransitionStatus } from 'react-transition-group/Transition'
 
 interface Props {
   click_event(): void
@@ -12,28 +14,38 @@ interface Props {
 }
 
 export const Button: React.FC<Props> = props => {
-  console.log(props.bgcolor)
+  const [hover_flg, setFlg] = React.useState(false)
   return (
     <React.Fragment>
-      <input
-        type={props.type}
-        className="button"
-        //()がないと動きません。
-        onClick={() => props.click_event()}
-        value={props.name}
-      />
+      <Transition in={hover_flg} timeout={100}>
+        {(state: TransitionStatus) => (
+          <input
+            type={props.type}
+            className="button"
+            //()がないと動きません。
+            onClick={() => props.click_event()}
+            onMouseOver={() => setFlg(true)}
+            onMouseOut={() => setFlg(false)}
+            value={props.name}
+            style={{
+              cursor: 'pointer',
+              transition: '0.5s',
+              width: props.width,
+              height: props.height,
+              color: props.color,
+              letterSpacing: '2.5px',
+              border: 0,
+              outline: 0,
+              borderRadius: props.round ? '5px' : '0',
+              backgroundColor: state === 'entered' ? 'black' : props.bgcolor
+            }}
+          />
+        )}
+      </Transition>
 
       <style jsx={true}>{`
-        .button {
-          cursor: pointer;
-          width: ${props.width};
-          height: ${props.height};
-          background-color: ${props.bgcolor};
-          color: ${props.color};
-          letter-spacing: 2.5px;
-          border: 0;
-          border-radius: ${props.round ? '5px' : '0'};
-          outline: 0;
+        .oioi {
+          color: #999;
         }
       `}</style>
     </React.Fragment>

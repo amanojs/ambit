@@ -13,7 +13,7 @@ export const PostPop: React.FC<Props> = props => {
   }
   return (
     <PopUp click_event={handleSetFlg} open_flg={props.open_flg}>
-      <PostForm />
+      <PostForm doneEvent={handleSetFlg} />
     </PopUp>
   )
 }
