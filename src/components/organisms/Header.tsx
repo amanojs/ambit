@@ -16,20 +16,41 @@ export const Header: React.FC<Props> = props => {
   return (
     <React.Fragment>
       <div className="Header">
-        <div className="HeaderNavBar">
-          {nav_item.map((item: NavItem) => (
-            <div className="NavItem">{item.name}</div>
-          ))}
+        <div className="HeaderBody">
+          <div className="LOGO">Ambit</div>
+          <div className="HeaderNavBar">
+            {nav_item.map((item: NavItem) => (
+              <div className="NavItem">{item.name}</div>
+            ))}
+          </div>
         </div>
       </div>
       <style jsx>{`
         .Header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 100%;
-          height: 50px;
-          padding: 10px;
-          background-color: #999;
+          background-color: #3c6382;
+        }
+        .HeaderBody {
+          width: 1300px;
+          height: 80px;
+        }
+        .LOGO {
+          display: flex;
+          align-items: center;
+          height: 80px;
+          float: left;
+          color: #fff;
+          font-size: 26px;
+          font-weight: bold;
         }
         .HeaderNavBar {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 80px;
           overflow: hidden;
         }
         .NavItem {
@@ -38,10 +59,12 @@ export const Header: React.FC<Props> = props => {
           justify-content: center;
           align-items: center;
           width: 100px;
-          border-radius: 60px;
+          border-radius: 4px;
           background-color: #fff;
-          padding: 6px;
+          margin-left: 5px;
+          padding: 9px;
           color: #777;
+          font-size: 12px;
           float: left;
         }
       `}</style>
