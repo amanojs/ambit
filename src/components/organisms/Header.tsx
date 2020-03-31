@@ -38,6 +38,7 @@ export const Header: React.FC<Props> = props => {
           height: 80px;
         }
         .LOGO {
+          cursor: pointer;
           display: flex;
           align-items: center;
           height: 80px;
