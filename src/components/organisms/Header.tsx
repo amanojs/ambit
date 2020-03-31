@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import * as Color from '../../constant/color'
 interface Props {}
 
 type NavItem = {
@@ -31,7 +31,7 @@ export const Header: React.FC<Props> = props => {
           align-items: center;
           justify-content: center;
           width: 100%;
-          background-color: #3c6382;
+          background-color: ${Color.main_color};
         }
         .HeaderBody {
           width: 1300px;
