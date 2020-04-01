@@ -9,8 +9,11 @@ type NavItem = {
 }
 
 const nav_item: NavItem[] = [
-  { name: 'プロフィール', href: 'hogehoge' },
-  { name: '通知', href: 'hugahuga' }
+  { name: 'トップ', href: '/' },
+  { name: 'テスト', href: '/test' },
+  { name: '動的ルーティング', href: '/posts/1' },
+  { name: 'プロフィール', href: '/profile' },
+  { name: '通知', href: '/modify' }
 ]
 
 export const Header: React.FC<Props> = props => {
@@ -21,19 +24,10 @@ export const Header: React.FC<Props> = props => {
           <div className="LOGO">Ambit</div>
           <div className="HeaderNavBar">
             {nav_item.map((item: NavItem) => (
-              <div className="NavItem">{item.name}</div>
+              <Link to={item.href}>
+                <div className="NavItem">{item.name}</div>
+              </Link>
             ))}
-            <ul>
-              <Link to="/">
-                <li>トップ</li>
-              </Link>
-              <Link to="/test">
-                <li>テスト</li>
-              </Link>
-              <Link to="/posts/1">
-                <li>投稿詳細(動的ルーティングテスト)</li>
-              </Link>
-            </ul>
           </div>
         </div>
       </div>
