@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as Color from '../../constant/color'
+import { Link } from 'react-router-dom'
 interface Props {}
 
 type NavItem = {
@@ -22,6 +23,17 @@ export const Header: React.FC<Props> = props => {
             {nav_item.map((item: NavItem) => (
               <div className="NavItem">{item.name}</div>
             ))}
+            <ul>
+              <Link to="/">
+                <li>トップ</li>
+              </Link>
+              <Link to="/test">
+                <li>テスト</li>
+              </Link>
+              <Link to="/posts/1">
+                <li>投稿詳細(動的ルーティングテスト)</li>
+              </Link>
+            </ul>
           </div>
         </div>
       </div>
