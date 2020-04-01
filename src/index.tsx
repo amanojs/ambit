@@ -12,6 +12,9 @@ ReactDOM.render(
         margin: 0;
         padding: 0;
       }
+      html {
+        overflow-y: scroll;
+      }
     `}</style>
   </Provider>,
   document.getElementById('app')
